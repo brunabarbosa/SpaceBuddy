@@ -10,6 +10,7 @@
     <unique-id>2uu945pf5x01q</unique-id>
     <saved-with-version>26500</saved-with-version>
     <used-plugins>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
     </used-plugins>
     <used-behaviors />
@@ -43,6 +44,25 @@
         <object-type name="Background" sid="185613278638836">
             <plugin id="TiledBg" />
             <texture original-source="C:\Users\bruna\Desktop\Space shooter\Backgrounds\blue.png" />
+        </object-type>
+        <object-type name="Player" sid="583981536675084">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="810304905342755" speed="5">
+                    <frame duration="1" hotspotX="0.50505" hotspotY="0.506667" original-source="C:\Users\bruna\Desktop\Space shooter\playerShip1_orange.png">
+                        <collision-poly>
+                            <point x="0.258929" y="0.386667" />
+                            <point x="0.5" y="0" />
+                            <point x="0.741071" y="0.386667" />
+                            <point x="0.883929" y="0.493333" />
+                            <point x="0.892857" y="0.84" />
+                            <point x="0.5" y="1" />
+                            <point x="0.107143" y="0.84" />
+                            <point x="0.116071" y="0.493333" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
         </object-type>
     </object-folder>
     <families />
