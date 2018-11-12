@@ -10,10 +10,13 @@
     <unique-id>2uu945pf5x01q</unique-id>
     <saved-with-version>26500</saved-with-version>
     <used-plugins>
+        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
     </used-plugins>
-    <used-behaviors />
+    <used-behaviors>
+        <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
+    </used-behaviors>
     <used-effects />
     <configurations>
         <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
@@ -29,7 +32,7 @@
         <prop name="Clear background">Yes</prop>
         <prop name="Downscaling">Medium quality</prop>
         <prop name="Enable WebGL">On</prop>
-        <prop name="Fullscreen in browser">Letterbox scale</prop>
+        <prop name="Fullscreen in browser">Letterbox integer scale</prop>
         <prop name="Fullscreen scaling">High quality</prop>
         <prop name="Loader style">Construct 2 splash</prop>
         <prop name="Orientations">Any</prop>
@@ -47,6 +50,11 @@
         </object-type>
         <object-type name="Player" sid="583981536675084">
             <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="BoundToLayout" sid="881189072604194">
+                    <behavior id="bound" />
+                </behavior-type>
+            </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="810304905342755" speed="5">
                     <frame duration="1" hotspotX="0.50505" hotspotY="0.506667" original-source="C:\Users\bruna\Desktop\Space shooter\playerShip1_orange.png">
@@ -64,6 +72,38 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="Meteor" sid="941128882695386">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="4" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="276724318321255" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\bruna\Desktop\Space shooter\Aestroids\aestroid_brown.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\bruna\Desktop\Space shooter\Aestroids\aestroid_dark.png" />
+                    <frame duration="1" hotspotX="0.506667" hotspotY="0.506667" original-source="C:\Users\bruna\Desktop\Space shooter\Aestroids\aestroid_gray.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\bruna\Desktop\Space shooter\Aestroids\aestroid_gray_2.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Laser" sid="813286170437596">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="469989130853499" speed="5">
+                    <frame duration="1" hotspotX="0.555556" hotspotY="0.513514" original-source="C:\Users\bruna\Desktop\Space shooter\Lasers\laserRed07.png">
+                        <collision-poly>
+                            <point x="0.111111" y="0.027027" />
+                            <point x="0.444444" y="0" />
+                            <point x="0.888889" y="0.027027" />
+                            <point x="1" y="0.486486" />
+                            <point x="0.666667" y="0.918919" />
+                            <point x="0.333333" y="0.918919" />
+                            <point x="0" y="0.486486" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Mouse" sid="346005665150835">
+            <plugin id="Mouse" />
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
@@ -72,7 +112,9 @@
     <event-folder>
         <event-sheet>Event sheet 1.xml</event-sheet>
     </event-folder>
-    <global-instances />
+    <global-instances>
+        <global-instance type="Mouse" uid="4" />
+    </global-instances>
     <sounds-folder />
     <music-folder />
     <files-folder>

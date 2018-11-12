@@ -2,5 +2,93 @@
 <c2eventsheet>
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Event sheet 1</name>
-    <events />
+    <events>
+        <event-block sid="516823414406677">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="250196572023575" type="System" />
+            </conditions>
+            <actions>
+                <action id="-1" name="Set X" sid="578359728928880" type="Player">
+                    <param id="0" name="X">Mouse.X</param>
+                </action>
+                <action id="-2" name="Set Y" sid="966054315634319" type="Laser">
+                    <param id="0" name="Y">Self.Y - 10</param>
+                </action>
+                <action id="-2" name="Set Y" sid="394307514577441" type="Meteor">
+                    <param id="0" name="Y">Self.Y + 3</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="821113518329246">
+            <conditions>
+                <condition id="2" name="Mouse button is down" sid="495869913876516" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                </condition>
+                <condition id="-6" name="Every X seconds" sid="156473552026652" type="System">
+                    <param id="0" name="Interval (seconds)">0.2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="857980304804378" type="System">
+                    <param id="0" name="Object to create">Laser</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">Player.X - 10</param>
+                    <param id="3" name="Y">Player.Y - 60</param>
+                </action>
+                <action id="-3" name="Create object" sid="497658973944449" type="System">
+                    <param id="0" name="Object to create">Laser</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">Player.X + 10</param>
+                    <param id="3" name="Y">Player.Y - 60</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="573919306886597">
+            <conditions>
+                <condition id="-4" name="Is outside layout" sid="281658830115071" type="Laser" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="575475149949306" type="Laser" />
+            </actions>
+        </event-block>
+        <event-block sid="496483108595357">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="467018635046186" type="System">
+                    <param id="0" name="Interval (seconds)">2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="919276822996008" type="System">
+                    <param id="0" name="Object to create">Meteor</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">random(WindowWidth)</param>
+                    <param id="3" name="Y">-50</param>
+                </action>
+                <action id="5" name="Set frame" sid="894235139839108" type="Meteor">
+                    <param id="0" name="Frame number">random(4)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="928428536958545">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="333266212192257" type="Laser">
+                    <param id="0" name="Object">Meteor</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="522894968342207" type="Meteor" />
+                <action id="-9" name="Destroy" sid="576662651707141" type="Laser" />
+            </actions>
+        </event-block>
+        <event-block sid="612575573400649">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="740764250147753" type="Player">
+                    <param id="0" name="Object">Meteor</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-26" name="Restart layout" sid="905482180573638" type="System" />
+            </actions>
+        </event-block>
+    </events>
 </c2eventsheet>
