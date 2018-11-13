@@ -10,6 +10,7 @@
     <unique-id>2uu945pf5x01q</unique-id>
     <saved-with-version>26500</saved-with-version>
     <used-plugins>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
@@ -50,6 +51,10 @@
         </object-type>
         <object-type name="Player" sid="583981536675084">
             <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="xSpeed" sid="282793960179953" type="number" />
+                <instance-variable name="ySpeed" sid="324144844054320" type="number" />
+            </instance-variables>
             <behaviors>
                 <behavior-type name="BoundToLayout" sid="881189072604194">
                     <behavior id="bound" />
@@ -104,6 +109,9 @@
         <object-type name="Mouse" sid="346005665150835">
             <plugin id="Mouse" />
         </object-type>
+        <object-type name="Keyboard" sid="572740734439910">
+            <plugin id="Keyboard" />
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
@@ -114,6 +122,7 @@
     </event-folder>
     <global-instances>
         <global-instance type="Mouse" uid="4" />
+        <global-instance type="Keyboard" uid="5" />
     </global-instances>
     <sounds-folder />
     <music-folder />

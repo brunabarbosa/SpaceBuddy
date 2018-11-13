@@ -8,7 +8,7 @@
                 <condition id="-1" name="Every tick" sid="250196572023575" type="System" />
             </conditions>
             <actions>
-                <action id="-1" name="Set X" sid="578359728928880" type="Player">
+                <action disabled="1" id="-1" name="Set X" sid="578359728928880" type="Player">
                     <param id="0" name="X">Mouse.X</param>
                 </action>
                 <action id="-2" name="Set Y" sid="966054315634319" type="Laser">
@@ -33,13 +33,13 @@
                     <param id="0" name="Object to create">Laser</param>
                     <param id="1" name="Layer">0</param>
                     <param id="2" name="X">Player.X - 10</param>
-                    <param id="3" name="Y">Player.Y - 60</param>
+                    <param id="3" name="Y">Player.Y - 55</param>
                 </action>
                 <action id="-3" name="Create object" sid="497658973944449" type="System">
                     <param id="0" name="Object to create">Laser</param>
                     <param id="1" name="Layer">0</param>
                     <param id="2" name="X">Player.X + 10</param>
-                    <param id="3" name="Y">Player.Y - 60</param>
+                    <param id="3" name="Y">Player.Y - 55</param>
                 </action>
             </actions>
         </event-block>
@@ -61,7 +61,7 @@
                 <action id="-3" name="Create object" sid="919276822996008" type="System">
                     <param id="0" name="Object to create">Meteor</param>
                     <param id="1" name="Layer">0</param>
-                    <param id="2" name="X">random(WindowWidth)</param>
+                    <param id="2" name="X">random(68,700)</param>
                     <param id="3" name="Y">-50</param>
                 </action>
                 <action id="5" name="Set frame" sid="894235139839108" type="Meteor">
@@ -88,6 +88,54 @@
             </conditions>
             <actions>
                 <action id="-26" name="Restart layout" sid="905482180573638" type="System" />
+            </actions>
+        </event-block>
+        <event-block sid="447642518895727">
+            <conditions>
+                <condition id="2" name="Key is down" sid="779646262908977" type="Keyboard">
+                    <param id="0" name="Key">37</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-1" name="Set X" sid="732864116843873" type="Player">
+                    <param id="0" name="X">Self.X - Self.xSpeed * dt</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="691767318925386">
+            <conditions>
+                <condition id="2" name="Key is down" sid="608463415384550" type="Keyboard">
+                    <param id="0" name="Key">39</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-1" name="Set X" sid="249274865208340" type="Player">
+                    <param id="0" name="X">Self.X + Self.xSpeed * dt</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="738336388826803">
+            <conditions>
+                <condition id="2" name="Key is down" sid="131170658470373" type="Keyboard">
+                    <param id="0" name="Key">38</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Set Y" sid="283380619503513" type="Player">
+                    <param id="0" name="Y">Self.Y - Self.ySpeed * dt</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="462558112250021">
+            <conditions>
+                <condition id="2" name="Key is down" sid="421066337759355" type="Keyboard">
+                    <param id="0" name="Key">40</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Set Y" sid="707407935910018" type="Player">
+                    <param id="0" name="Y">Self.Y + Self.ySpeed * dt</param>
+                </action>
             </actions>
         </event-block>
     </events>
