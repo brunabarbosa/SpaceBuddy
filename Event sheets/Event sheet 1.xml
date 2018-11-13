@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Event sheet 1</name>
     <events>
+        <variable constant="0" name="Score" sid="857648154288542" static="0" type="number">0</variable>
         <event-block sid="516823414406677">
             <conditions>
                 <condition id="-1" name="Every tick" sid="250196572023575" type="System" />
@@ -16,6 +17,9 @@
                 </action>
                 <action id="-2" name="Set Y" sid="394307514577441" type="Meteor">
                     <param id="0" name="Y">Self.Y + 3</param>
+                </action>
+                <action id="0" name="Set text" sid="297031800439303" type="score">
+                    <param id="0" name="Text">Score</param>
                 </action>
             </actions>
         </event-block>
@@ -76,9 +80,35 @@
                 </condition>
             </conditions>
             <actions>
-                <action id="-9" name="Destroy" sid="522894968342207" type="Meteor" />
+                <action id="-12" name="Subtract from" sid="916238976670851" type="Meteor">
+                    <param id="0" name="Instance variable">HP</param>
+                    <param id="1" name="Value">1</param>
+                </action>
                 <action id="-9" name="Destroy" sid="576662651707141" type="Laser" />
             </actions>
+            <sub-events>
+                <event-block sid="132536011554847">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="258251241868314" type="Meteor">
+                            <param id="0" name="Instance variable">HP</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="496799052154140" type="Meteor" />
+                        <action id="0" name="Spawn another object" sid="561687517891589" type="Meteor">
+                            <param id="0" name="Object">MeteorParticle</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="897026710152932" type="System">
+                            <param id="0" name="Variable">Score</param>
+                            <param id="1" name="Value">(Meteor.AnimationFrame + 1) * 10</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
         <event-block sid="612575573400649">
             <conditions>
@@ -87,7 +117,16 @@
                 </condition>
             </conditions>
             <actions>
-                <action id="-26" name="Restart layout" sid="905482180573638" type="System" />
+                <action id="0" name="Spawn another object" sid="502470379864511" type="Player">
+                    <param id="0" name="Object">PlayerParticle</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="276773630069003" type="Player" />
+                <action id="-16" name="Wait" sid="908241072342171" type="System">
+                    <param id="0" name="Seconds">2</param>
+                </action>
+                <action id="-26" name="Restart layout" sid="968500543990021" type="System" />
             </actions>
         </event-block>
         <event-block sid="447642518895727">
