@@ -58,7 +58,7 @@
                     </properties>
                     <instance-variables>
                         <xSpeed>450</xSpeed>
-                        <ySpeed>300</ySpeed>
+                        <ySpeed>350</ySpeed>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="BoundToLayout">
@@ -73,10 +73,10 @@
                         <x>384</x>
                         <y>416</y>
                         <z>0</z>
-                        <width>99</width>
+                        <width>112</width>
                         <height>75</height>
                         <depth>0</depth>
-                        <hotspotX>0.50505048</hotspotX>
+                        <hotspotX>0.5</hotspotX>
                         <hotspotY>0.50666666</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>

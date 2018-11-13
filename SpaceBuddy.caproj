@@ -49,7 +49,7 @@
     <object-folder>
         <object-type name="Background" sid="185613278638836">
             <plugin id="TiledBg" />
-            <texture original-source="C:\Users\bruna\Desktop\Space shooter\Backgrounds\blue.png" />
+            <texture original-source="C:\Users\bruna.barbosa\Documents\SpaceBuddy\Assets\Backgrounds\darkPurple.png" />
         </object-type>
         <object-type name="Player" sid="583981536675084">
             <plugin id="Sprite" />
@@ -64,7 +64,7 @@
             </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="810304905342755" speed="5">
-                    <frame duration="1" hotspotX="0.50505" hotspotY="0.506667" original-source="C:\Users\bruna\Desktop\Space shooter\playerShip1_orange.png">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.506667" original-source="C:\Users\bruna.barbosa\Documents\SpaceBuddy\Assets\playerShip2_red.png">
                         <collision-poly>
                             <point x="0.258929" y="0.386667" />
                             <point x="0.5" y="0" />
