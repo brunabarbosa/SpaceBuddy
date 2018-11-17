@@ -18,7 +18,10 @@
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
     </used-plugins>
     <used-behaviors>
+        <behavior author="Scirra" id="Flash" version="1">Flash</behavior>
+        <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
         <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
+        <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
     </used-behaviors>
     <used-effects />
     <configurations>
@@ -128,6 +131,46 @@
         <object-type name="score" sid="422930797390986">
             <plugin id="Spritefont2" />
             <texture />
+        </object-type>
+        <object-type name="shield_gold" sid="811285396604754">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Sine" sid="507306500300442">
+                    <behavior id="Sin" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="707310716181010" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\bruna\Desktop\SpaceBuddy\Assets\Power-ups\shield_gold.png">
+                        <collision-poly>
+                            <point x="0.0333333" y="0.0333333" />
+                            <point x="0.5" y="0" />
+                            <point x="0.966667" y="0.0333333" />
+                            <point x="0.866667" y="0.5" />
+                            <point x="0.766667" y="0.766667" />
+                            <point x="0.5" y="0.966667" />
+                            <point x="0.2" y="0.8" />
+                            <point x="0.1" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="shield" sid="883597376410153">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="DestroyOutsideLayout" sid="684784317757215">
+                    <behavior id="destroy" />
+                </behavior-type>
+                <behavior-type name="Flash" sid="230034021860642">
+                    <behavior id="Flash" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="165434668087526" speed="5">
+                    <frame duration="1" hotspotX="0.503759" hotspotY="0.5" original-source="C:\Users\bruna\Desktop\SpaceBuddy\Assets\Effects\shield1.png" />
+                </animation>
+            </animation-folder>
         </object-type>
     </object-folder>
     <families />
