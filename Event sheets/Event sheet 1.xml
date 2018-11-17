@@ -3,6 +3,9 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Event sheet 1</name>
     <events>
+        <variable constant="0" name="Shield" sid="546269282342209" static="0" type="text">&quot;Off&quot;</variable>
+        <variable constant="0" name="GameOver" sid="286892265452282" static="0" type="number">0</variable>
+        <variable constant="0" name="Life" sid="905752192310978" static="0" type="number">3</variable>
         <variable constant="0" name="Score" sid="857648154288542" static="0" type="number">0</variable>
         <event-block sid="516823414406677">
             <conditions>
@@ -23,6 +26,9 @@
                 </action>
                 <action id="-2" name="Set Y" sid="430123711156651" type="shield_gold">
                     <param id="0" name="Y">Self.Y + 2</param>
+                </action>
+                <action id="0" name="Set text" sid="726711120051463" type="Life">
+                    <param id="0" name="Text">Life</param>
                 </action>
             </actions>
         </event-block>
@@ -129,8 +135,39 @@
                 <action id="-16" name="Wait" sid="908241072342171" type="System">
                     <param id="0" name="Seconds">2</param>
                 </action>
+                <action id="-11" name="Subtract from" sid="630839905868457" type="System">
+                    <param id="0" name="Variable">Life</param>
+                    <param id="1" name="Value">1</param>
+                </action>
                 <action id="-26" name="Restart layout" sid="968500543990021" type="System" />
             </actions>
+            <sub-events>
+                <event-block sid="260675921829073">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="461713556857029" type="System">
+                            <param id="0" name="Variable">GameOver</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="259753150391515" type="System">
+                            <param id="0" name="Seconds">2</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="714281893928842" type="System">
+                            <param id="0" name="Object to create">Player</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">384</param>
+                            <param id="3" name="Y">424</param>
+                        </action>
+                        <action behavior="Flash" id="0" name="Flash" sid="506463882278742" type="Player">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">0.5</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
         <event-block sid="447642518895727">
             <conditions>
@@ -203,6 +240,10 @@
             </conditions>
             <actions>
                 <action id="-9" name="Destroy" sid="892267151932681" type="shield_gold" />
+                <action id="-9" name="Set value" sid="784892721307397" type="System">
+                    <param id="0" name="Variable">Shield</param>
+                    <param id="1" name="Value">&quot;On&quot;</param>
+                </action>
                 <action id="0" name="Spawn another object" sid="790015830271241" type="Player">
                     <param id="0" name="Object">shield</param>
                     <param id="1" name="Layer">0</param>
@@ -223,17 +264,9 @@
                 <condition behavior="Flash" id="1" name="On flash ended" sid="939137843193851" type="shield" />
             </conditions>
             <actions>
-                <action id="-9" name="Destroy" sid="645467158653353" type="shield" />
-            </actions>
-        </event-block>
-        <event-block sid="107367441123530">
-            <conditions>
-                <condition id="-1" name="Every tick" sid="692795006401014" type="System" />
-            </conditions>
-            <actions>
-                <action id="-3" name="Set position" sid="635514281761553" type="shield">
-                    <param id="0" name="X">Player.X</param>
-                    <param id="1" name="Y">Player.Y</param>
+                <action id="-9" name="Set value" sid="465313446071480" type="System">
+                    <param id="0" name="Variable">Shield</param>
+                    <param id="1" name="Value">&quot;Off&quot;</param>
                 </action>
             </actions>
         </event-block>
@@ -262,6 +295,86 @@
             </conditions>
             <actions>
                 <action id="-9" name="Destroy" sid="896103388641628" type="shield" />
+            </actions>
+        </event-block>
+        <event-block sid="447332718979411">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="618378324754287" type="System">
+                    <param id="0" name="Variable">Life</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="166232840685432" type="System">
+                    <param id="0" name="Variable">GameOver</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="723425783776543" type="System">
+                    <param id="0" name="Seconds">2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="987725638378213">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="520180761327869" type="System">
+                    <param id="0" name="Variable">GameOver</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="957068120808140" type="System">
+                    <param id="0" name="Variable">GameOver</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="870009371072941" type="System">
+                    <param id="0" name="Variable">Life</param>
+                    <param id="1" name="Value">3</param>
+                </action>
+                <action id="-9" name="Set value" sid="162987928936205" type="System">
+                    <param id="0" name="Variable">Score</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="954228518209661" type="System">
+                    <param id="0" name="Variable">Shield</param>
+                    <param id="1" name="Value">&quot;Off&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="633692773456910">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="965970828571316" type="System">
+                    <param id="0" name="Variable">Shield</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;On&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="159124271314501">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="569341129008968" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Set position" sid="383414361628397" type="shield">
+                            <param id="0" name="X">Player.X</param>
+                            <param id="1" name="Y">Player.Y</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="440377919932273">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="691284882806344" type="System">
+                    <param id="0" name="Variable">Shield</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;Off&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="339418074758959" type="shield" />
             </actions>
         </event-block>
     </events>
