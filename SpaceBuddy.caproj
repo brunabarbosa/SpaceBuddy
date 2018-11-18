@@ -22,6 +22,7 @@
         <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
         <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
         <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
+        <behavior author="Scirra" id="wrap" version="1">Wrap</behavior>
     </used-behaviors>
     <used-effects />
     <configurations>
@@ -52,6 +53,11 @@
     <object-folder>
         <object-type name="Background" sid="185613278638836">
             <plugin id="TiledBg" />
+            <behaviors>
+                <behavior-type name="Wrap" sid="877667029118597">
+                    <behavior id="wrap" />
+                </behavior-type>
+            </behaviors>
             <texture original-source="C:\Users\bruna.barbosa\Documents\SpaceBuddy\Assets\Backgrounds\darkPurple.png" />
         </object-type>
         <object-type name="Player" sid="583981536675084">
@@ -90,6 +96,11 @@
             <instance-variables>
                 <instance-variable name="HP" sid="184796467578728" type="number" />
             </instance-variables>
+            <behaviors>
+                <behavior-type name="Sine" sid="999128437651385">
+                    <behavior id="Sin" />
+                </behavior-type>
+            </behaviors>
             <animation-folder>
                 <animation framecount="4" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="276724318321255" speed="0">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\bruna\Desktop\Space shooter\Aestroids\aestroid_brown.png" />

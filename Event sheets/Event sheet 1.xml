@@ -30,6 +30,9 @@
                 <action id="0" name="Set text" sid="726711120051463" type="Life">
                     <param id="0" name="Text">Life</param>
                 </action>
+                <action id="-2" name="Set Y" sid="552715103417916" type="Background">
+                    <param id="0" name="Y">Self.Y + 1</param>
+                </action>
             </actions>
         </event-block>
         <event-block sid="821113518329246">
@@ -375,6 +378,91 @@
             </conditions>
             <actions>
                 <action id="-9" name="Destroy" sid="339418074758959" type="shield" />
+            </actions>
+        </event-block>
+        <event-block sid="508000575228795">
+            <conditions>
+                <condition id="2" name="Key is down" sid="666994015372302" type="Keyboard">
+                    <param id="0" name="Key">65</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-1" name="Set X" sid="282919520873669" type="Player">
+                    <param id="0" name="X">Self.X - Self.xSpeed * dt</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="386716195809892">
+            <conditions>
+                <condition id="2" name="Key is down" sid="720565776596961" type="Keyboard">
+                    <param id="0" name="Key">68</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-1" name="Set X" sid="581032994786682" type="Player">
+                    <param id="0" name="X">Self.X + Self.xSpeed * dt</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="750390907280375">
+            <conditions>
+                <condition id="2" name="Key is down" sid="678747949304993" type="Keyboard">
+                    <param id="0" name="Key">87</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Set Y" sid="622653202259809" type="Player">
+                    <param id="0" name="Y">Self.Y - Self.ySpeed * dt</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="152856319597286">
+            <conditions>
+                <condition id="2" name="Key is down" sid="516155443811480" type="Keyboard">
+                    <param id="0" name="Key">83</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Set Y" sid="597623938256951" type="Player">
+                    <param id="0" name="Y">Self.Y + Self.ySpeed * dt</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="713260439215320">
+            <conditions>
+                <condition id="2" name="Key is down" sid="170220797672584" type="Keyboard">
+                    <param id="0" name="Key">32</param>
+                </condition>
+                <condition id="-6" name="Every X seconds" sid="310249917325641" type="System">
+                    <param id="0" name="Interval (seconds)">0.2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="411972249103768" type="System">
+                    <param id="0" name="Object to create">Laser</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">Player.X - 10</param>
+                    <param id="3" name="Y">Player.Y - 55</param>
+                </action>
+                <action id="-3" name="Create object" sid="460432037395048" type="System">
+                    <param id="0" name="Object to create">Laser</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">Player.X + 10</param>
+                    <param id="3" name="Y">Player.Y - 55</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="742866308905419">
+            <conditions>
+                <condition id="-2" name="Compare Y" sid="833627909089308" type="Background">
+                    <param id="0" name="Comparison">5</param>
+                    <param id="1" name="Y co-ordinate">600</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Set Y" sid="659281850913505" type="Background">
+                    <param id="0" name="Y">-280</param>
+                </action>
             </actions>
         </event-block>
     </events>
